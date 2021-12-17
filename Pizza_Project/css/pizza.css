@@ -1,0 +1,77 @@
+/*body styling*/
+body{
+    background-image: linear-gradient(to right,#005500,darkgreen,#005500);
+}
+/*heading styles*/
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    color: gold;
+    text-align: center;
+}
+h3{
+    font-family: 'Courier New', Courier, monospace;
+    color: gold;
+}
+/*main font stylings*/
+div{
+    font-family: 'Courier New', Courier, monospace;
+    color: gold;
+}
+/*menu styles*/
+#menuBG{
+    width: 460px;
+    height: 100%;
+    margin: 20px auto;
+}
+#frmMenu{
+    width: 460px;
+    height: 400px;
+}
+#totalPrice{
+    width: 200px;
+    height: 190px;
+    margin: 0 auto;
+    float: right;
+}
+.menu-top{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+.menu-left{
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin-left: 20px;
+    -ms-transform: translateX(10%);
+    transform: translateX(10%);
+}
+.menu-right{
+    width: 200px;
+    height: 200px;
+    float: right;
+    margin: 0;
+}
+/*checkout style*/
+#showText{
+    width: 200px;
+    height: 190px;
+    margin: 0px auto;
+    float: left;
+}
+#cart{
+    top: 0;
+    margin: 0px auto;
+    width: 400px;
+    height: 200px;
+}
+#btnOrder{
+    background-color: red;
+    font-size: 90%;
+    font-weight: bold;
+    margin: 20px 230px;
+    width: 100px;
+    height: 40px;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
