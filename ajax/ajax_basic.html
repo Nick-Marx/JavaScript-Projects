@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Basic AJAX Demo</title>
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="main">
+			<h2>Get The Latest Content:</h2>
+			<div class='content' id="content">
+				<input type="button" class="button" value="Get Content" id="btn_content" onclick="getContent();"/>
+			</div>
+		<script type="text/javascript">
+			//step1: create ez-use variable for XMLHttpRequest
+			var ajax = new XMLHttpRequest();
+			//step2: use the 'open' method to begin a 'get' request for the content on the server
+			ajax.open('GET', 'content.html');
+			//step3: run a fn that will display the response on the page if it is of 'readystate' type '4'
+			ajax.onreadystatechange = function(){
+				if(ajax.readyState == 4){
+					document.getElementById('content').innerHTML = ajax.responseText;
+				}
+			}
+			//step4: fn to hide the button on the page once response is received and displayed
+			function getContent(){
+				ajax.send();
+				document.getElementById('btn_content').style.display = 'none';
+			}
+		</script>
+    </body>
+</html>
