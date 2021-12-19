@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!--link to jquery repo-->
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    </head>
+    <script>
+        //use jquery to add an html body section to the page and fill it with containers and paragraphs
+        $(document).ready(function(){
+            $("html").append(
+                "<body>\
+                    <div id='container'>\
+                        <div id='inner'>\
+                            <h1>Basic jQuery</h1>\
+                            <p id='1'>Paragraph 1</p>\
+                            <p id='2'>Paragraph 1</p>\
+                            <p id='3'>Paragraph 1</p>\
+                        </div>\
+                    </div>\
+                </body>"
+            );
+            //use jquery to add css code to color a para red and hide the heading on click
+            $("#2").css({"color":"red"});
+            $("#3").click(function(){
+                $('h1').hide();
+            });
+        });
+    </script>
+</html>
