@@ -1,0 +1,41 @@
+/*html stylings*/
+html{
+    font-family: 'Avenir Next', Helvetica, sans-serif;
+    text-align: center;
+}
+/*body stylings*/
+body{
+    max-width: 500px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+/*input field styling*/
+input{
+    padding-top: 30px;
+    width: 500px;
+    height: 60px;
+    font-size: 40px;
+    border: 0;
+}
+input:focus{
+    outline: none;
+}
+/*list stylings*/
+li{
+    text-align: left;
+    font-size: 40px;
+    list-style: none;
+    margin: 0;
+}
+/*footer stylings*/
+footer{
+    font-style: italic;
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+}
+/*fix padding after item removed from list*/
+.remove{
+    padding-bottom: 5px;
+}

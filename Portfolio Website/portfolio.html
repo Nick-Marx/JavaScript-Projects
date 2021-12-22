@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <!--head-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width"/>
+        <title>Nick Marx</title>
+        <link rel="shortcut icon" type="img/png" href="./img/tab-thumbnail.png">
+        <link rel="stylesheet" type="text/css" href="./css/portfolio.css">
+        <script src="./js/portfolio.js" defer></script>
+    </head>
+    <!--body-->
+    <body class="background">
+        <!--navbar-->
+        <div class="navbar">
+            <a class="active" href="#home">Home</a>
+            <a href="#slideshow">Slides</a>
+            <a href="#about">About</a>
+            <a href="#github">GitHub</a>
+            <!--open & close contact form-->
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
+        </div>
+        <!--background vid-->
+        <div id="home">
+            <video autoplay muted loop id="background_vid">
+                <source src="./vid/background_vid.mp4" type="video/mp4">
+                <!--video fail message-->
+                Error. Video format not supported.
+            </video>
+        </div>
+        <!--video text-->
+        <div class="video_text">
+            <h1 class="white_text">Nick's Portfolio</h1>
+            <strong>
+                <p class="center">
+                    <q>
+                        The computer programmer is a creator of universes for which he alone is the lawgiver.<br>No playwright, no stage director, no emporer, however powerful, has ever exercised such absolute authority to arrange a stage or field of battle and to command such unswervingly dutiful actors or troops.
+                    </q>
+                    <br> -Joseph Weizenbaum
+                    <br>
+                    <br> My name is Nicholas Marx. Welcome to my portfolio website. On it, I will tell you about my background and experience.
+                    <br>
+                    <br> Thank you for stopping by and enjoy!
+                </p>
+            </strong>
+        </div>
+        <!--slideshow-->
+        <div id="slideshow">
+            <div id="slideshow_background">
+                <div id="slideshow_container">
+                    <!--slide 1-->
+                    <div class="mySlides">
+                        <img class="slide_img" src="./img/html_custom.png" alt="picture unavailable">
+                        <div class="slide_text">I'm an aspiring full-stack software developer, trained in:</div>
+                    </div>
+                    <!--slide 2-->
+                    <div class="mySlides">
+                        <img class="slide_img" src="./img/Python.png" alt="picture unavailable">
+                        <div class="slide_text">the popular language Python,</div>
+                    </div>
+                    <!--slide 3-->
+                    <div class="mySlides">
+                        <img class="slide_img" src="./img/HTML_CSS_and_JavaScript.jpeg" alt="picture unavailable">
+                        <div class="slide_text">HTML, CSS, and JavaScript,</div>
+                    </div>
+                    <!--slide 4-->
+                    <div class="mySlides">
+                        <img class="slide_img" src="./img/SQL_and_Database.jpg" alt="picture unavailable">
+                        <div class="slide_text">backend development, databases, and SQL,</div>
+                    </div>
+                    <!--slide 5-->
+                    <div class="mySlides">
+                        <img class="slide_img" src="./img/c-sharp-unity.png" alt="picture unavailable">
+                        <div class="slide_text">C# and the Unity Engine,</div>
+                    </div>
+                    <!--slide 6-->
+                    <div class="mySlides">
+                        <img class="slide_img" src="./img/UnrealC-feature.png" alt="picture unavailable">
+                        <div class="slide_text">C++ and the Unreal Engine</div>
+                    </div>
+                    <!--prev & next btn-->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <!--space between slides and dots-->
+                <br>
+                <!--slideshow dots-->
+                <div style="text-align: center;">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                </div>
+            </div>
+        </div>
+        <!--about-->
+        <div class="row" id="about">
+            <!--left column-->
+            <div class="column_2">
+                <img src="./img/html_custom2.png" alt="Image not available.">
+            </div>
+            <!--right column-->
+            <div class="column_1">
+                <h1>About</h1>
+                <p>
+                    I am a software developer who loves to code!
+                    <br>
+                    <br>I am currently enrolled in <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s Game Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML and CSS. 
+                    <br>
+                    <br>I am studying diligently to be a full-stack developer and would love to work with you on your project. <a onclick="openForm()" class="contact">Contact</a> me below!
+                </p>
+            </div>
+        </div>
+        <!--github section-->
+        <div class="row" id="github">
+            <!--left column-->
+            <div class="column_1">
+                <h1>GitHub</h1>
+                <p>
+                    Take a moment to browse my coding projects on my GitHub profile here:
+                    <br>
+                    <p class="center"><a href="https://github.com/Nick-Marx/" target="_blank">Nick Marx's GitHub</a></p>
+                </p>
+            </div>
+            <!--right column-->
+            <div class="column_2">
+                <a href="https://github.com/Nick-Marx/" target="_blank"><img src="./img/GitHub.png" alt="GitHub Logo"></a>
+            </div>
+        </div>
+        <!--contact form-->
+        <div id="contact">
+            <button onclick="openForm()" class="pop_up_button">CONTACT</button>
+            <div class="form-popup" id="myForm">
+                <form action="https://formspree.io/f/mbjwrwgz" method="post" class="form-container">
+                    <h1>Contact</h1>
+                    <label for="name"><b>Name</b></label>
+                        <input type="text" placeholder="Type your name here" name="name" required>
+                    <label for="phone"><b>Phone</b></label>
+                        <input type="text" placeholder="Type your phone number here" name="phone">
+                    <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Type your email address here" name="email" required>
+                    <label for="message"><b>Message</b></label>
+                        <input type="text" placeholder="Type your message here" name="message">
+                    <button type="submit" class="btn">Submit</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                </form>
+            </div>
+        </div>
+        <!--footer section-->
+        <footer>
+            <p>
+                <p class="center">Nicholas Marx's Developer Portfolio, <a href="https://github.com/Nick-Marx/" target="_blank">Nick Marx</a></p>
+                <br>
+            </p>
+        </footer>
+    </body>
+</html>

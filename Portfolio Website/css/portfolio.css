@@ -1,0 +1,437 @@
+/**general styling**/
+/*html styling*/
+html{
+    scroll-behavior: smooth;
+}
+/*body*/
+body{
+    margin: 0%;/*ensures display to edge of browser window*/
+    letter-spacing: .2vw;/*1vw = 1% viewport width*/
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;/*prevents horizontal scrollbar when quote is hovered over*/
+    user-select: none;/*prevents all text from being highlighted*/
+}
+/*heading 1 elements*/
+h1{
+    text-transform: uppercase;/*capitalization*/
+    font-family: Trebuchet MS, Optima;/*sets font family*/
+    font-size: 3vw;
+    text-align: center;/*centers elements*/
+    margin-top: 3%;/*adds small margine above elements*/
+    color: #F79824;
+}
+/*heading 1 elements - hover*/
+h1:hover{
+    filter: grayscale(5%);/*adds slight gray filter on hover*/
+    transform: scale(1.1);/*slight increase in size on hover*/
+    transition: transform 1s;/*causes transform to last 1 sec*/
+}
+/*title text styling*/
+.white_text{
+    color: #F79824;/*title text color*/
+}
+/*paragraph elements*/
+p{
+    font-family: Perpetua, Rockwell Extra Bold;
+    text-align: justify;/*justify text within elements*/
+    letter-spacing: .1px;/*expands text slightly*/
+    font-size: 1.5vw;
+    padding-left: 1vw;/*adds padding to left of elements*/
+    padding-right: 1vw;/*adds padding to right of elements*/
+    color: #33A1FD;
+}
+/*paragraph element - hover*/
+p:hover{
+    transition: transform 1s;/*transform effect lasts 1 sec*/
+    transform: scale(1.01);/*increase element size slightly on hover*/
+}
+/*center class*/
+.center{
+    text-align: center;/*center aligns text*/
+}
+/*center class - hover*/
+.center:hover{
+    transition: transform 2s;/*transform effect lasts 2 secs*/
+    transform: scale(1.1);/*increase element size slightly on hover*/
+}
+/*anchor elements*/
+a{
+    color: #FDCA40;/*all links are blue*/
+    cursor: pointer;
+}
+/*quotation elements*/
+q{
+    font-style: italic;/*quotes are italicized*/
+    font-size: 2.5vw;
+}
+/*image elements*/
+img{
+    filter: grayscale(75%);/*removes 75% color from images*/
+    border-radius: 8px;/*images have slightly rounded corners*/
+    max-width: 100%;/*images cant extend beyond width of their container*/
+    max-height: 100%;/*sets height of images*/
+    display: block;/*required to center images*/
+    margin: auto auto auto auto;/*centeres all imgs*/
+}
+/*image elements - hover*/
+img:hover{
+    filter: grayscale(5%);/*brings back most of an images color on hover*/
+}
+/*footer element*/
+footer{
+    padding: 2%;/*adds footer padding equal to 2% of element's width*/
+    background-color: rgba(255,255,255,0.2)
+}
+/**navbar styling**/
+.navbar{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;/*hides anything that excedes the boundary of elemnt area*/
+    background-color: rgba(0,0,0,0.95);
+    position: fixed;/*keeps navbar at top of screen while scrolling*/
+    top: 0;/*no space above navbar*/
+    width: 100%;/*navbar spans entire width of page*/
+    z-index: 1;/*navbar displays over top of all other elements*/
+    -webkit-animation: moveNav 2s;/*enables moveNav animation on Safari 4.0 - 8.0*/
+    animation: moveNav 2s;/*applies moveNav animation for all other browsers*/
+}
+/*moveNav animation effect for moving the navbar in from the left of the screen*/
+@keyframes moveNav{
+    from{left: -100vw;}/*starts the navbar off the screen on left*/
+    to{left: 0vw;}/*moves navbar into place on screen*/
+}
+/*navbar links*/
+.navbar a{
+    color: #2176FF;/*navbar text color*/
+    padding: 10px;/*adds padding around text*/
+    text-decoration: none;/*removes text underline*/
+    font-family: avant garde, helvetica;
+    font-size: 1.5vw;
+    text-align: center;/*centers text within it's container*/
+    position: relative;/*sets text relative to it's normal positioning, allowing animation*/
+    -webkit-animation: moveNavText 2s;/*animation for Safari 4.0-8.0*/
+    animation: moveNavText 2s;/*applies moveNavText animation for 2s*/
+}
+/*moveNavText animation effect for moving navbar text from above view to the navbar*/
+@keyframes moveNavText{
+    from{top: -100vw;}/*sets navbar text 100% above the viewport*/
+    to{top: 0vw;}/*lowers navbar text onto the navbar*/
+}
+/*navbar elemnet- hover*/
+.navbar a:hover{
+    background-color: #2176FF;/*hover background color*/
+    color: black;/*hover font color*/
+    font-weight: bold;/*hover font bold*/
+    transition: 0.2s ease-in-out;
+}
+/**video styling**/
+/*background video formatting*/
+#background_vid{
+    position: fixed;/*fixes video to page*/
+    right: 0;/*ensures no space between edge of video and edge of page*/
+    bottom: 0;/*ensures no space between bottom of video and bottom of page*/
+    min-width: 100%;/*ensures video is displayed across full width of the page*/
+    z-index: -1;/*places video behind everything else*/
+}
+/*text over video*/
+.video_text{
+    background: rgba(0,0,0,0.5);/*adds semi-transparent background for text to sit over*/
+    color: #33A1FD;
+    width: 100vmax;/*ensures video-text container fills width of video*/
+    height: 100vh;
+    padding: 4vw;
+    overflow: hidden;
+    position: relative;/*sets text relative to it's normal positioning, allows use of animation*/
+    -webkit-animation: moveVideoText 2s;/*animation for Safari 4.0-8.0*/
+    animation: moveVideoText 2s;/*applies moveVideoText animation for 2s*/
+}
+/*vid text overflow handling when screen too large*/
+.video_text:hover, .video_text:active, .video_text:focus{
+    overflow-y: auto;
+}
+/*animation effect causes the overlay video text to move up from the bottom of the page upon page load*/
+@keyframes moveVideoText{
+    from{top: -100vw;}/*sets position of vid text to above the above viewport*/
+    to{top: 0vw;}/*moves vid text to normal position*/
+}
+/**slideshow styling**/
+#slideshow_background{
+    background: rgba(255,255,255,0.35);/*transparent white background*/
+}
+.mySlides{
+    display: none;/*hides img on page load*/
+}
+/*slideshow container*/
+#slideshow_container{
+    width: 39.5vw;/*set container to % of viewport width*/
+    height: auto;/*height adjusted to dispalyed content*/
+    padding-top: 4%;
+    position: relative;
+    margin: auto;/*horizontally center container on page*/
+}
+#slideshow_container a{
+    text-decoration: none;/*rem underline from next & prev btns*/
+}
+.slide_img{
+    vertical-align: middle;/*centers img vertically within container*/
+    height: 39.5vw;/*img height adjusted based on img dimensions*/
+    box-shadow: 0px 5px 10px 12px rgba(0,0,0,.75);/*add shadow to img*/
+    width: 100%;/*force full img width*/
+}
+/*next & prev btns*/
+.prev, .next{
+    cursor: pointer;
+    position: absolute;/*btns will stay in place within container*/
+    top: 50%;
+    width: auto;
+    padding: 2vw;
+    color: darkgray;
+    font-weight: bold;
+    font-size: 1.5vw;
+    border-radius: 0 3px 3px 0;
+    user-select: none;/*user cannot highlight text*/
+    transition: 0.6s ease;/*specifies hover transition for these btns*/
+}
+/*keep next btn on right side*/
+.next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+/*slideshow btn hover stylings*/
+.prev:hover, .next:hover{
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+}
+/*slideshow text*/
+.slide_text{
+    color: white;
+    padding: 1vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace Extra Bold;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    background-color: rgba(0,0,0,0.75);
+    font-weight: bold;
+    border-radius: 0px 0px 7px 7px;
+}
+/*dot stylings*/
+.dot{
+    cursor: pointer;
+    height: 1vw;
+    width: 1vw;
+    margin: .25vw;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;/*allows dots to sit next to each other rather than on new line*/
+    transition: background-color 0.6s ease;/*dots change color when clicked or hovered*/
+    z-index: 1;
+}
+/*dot hover style*/
+.dot:hover{
+    background-color: black;
+}
+/*slideshow fade anim*/
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+}
+@-webkit-keyframes fade{
+    from{opacity: .4;}/*begin transparent*/
+    to{opacity: 1;}/*end opaque*/
+}
+/**table styling - styling of columns and rows in table**/
+*{/*asterisk is universal selector that applies to all elements on page*/
+    box-sizing: border-box;/*creates box with border within which we will place most of text*/
+}
+.column_1{
+    float: left;
+    width: 50%;/*ensures column takes up half of page width*/
+    padding: 1.6%;
+    overflow: hidden;
+    height: 500px;/*sets height of column*/
+    background-color: rgba(255,255,255,0.2);/*sets background color of column_1 class*/
+}
+/*col_1 overflow handling when screen too large*/
+.column_1:hover, .column_1:active, .column_1:focus{
+    overflow-y: auto;
+}
+.column_2{
+    float: left;
+    width: 50%;
+    padding: 1.6%;
+    height: 500px;
+    background-color: rgba(0,0,0,0.5);
+}
+/*insert something after content of selected elements*/
+.row:after{
+    content: "";/*by leaving this blank, we are allowing the footer to be displayed. removing it makes the footer overwrite a column*/
+    display: table;/*display property specifies type of display behavior; table value tells browser to treat element as table*/
+    clear: both;/*clears any other elements from floating on left or right of element*/
+}
+/**contact form styling**/
+/*popup btn styling*/
+.pop_up_button{
+    position: fixed;
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 25vw;
+    background-color: #2176FF;
+    color: black;
+    border: solid black;
+    cursor: pointer;
+    -webkit-animation: movePopup 2s;
+    animation: movePopup 2s;
+}
+/*moves contact button into position from off page on page load*/
+@keyframes movePopup{
+    from{right: -40vw;}
+    to{right: 1.75vw;}
+}
+@-webkit-keyframes movePopup{
+    from{right: -40vw;}
+    to{right: 1.75vw;}
+}
+/*contact form stylings*/
+.form-popup{
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: .5vw;
+    right: .5vw;
+}
+/*form container stylings*/
+.form-container{
+    max-width: 49vw;
+    padding: 1vw;
+    background-color: white;
+}
+/*input field stylings*/
+.form-container input[type=text]{
+    width: 100%;
+    padding: .93vw;
+    margin: .6vw 0 .6vw 0;/*space between input boxes and labels*/
+    border: none;
+    background: gainsboro;
+    font-size: 1vw;
+}
+/*btn stylings*/
+button{
+    font-family: 'Trebuchet MS', optima;
+    letter-spacing: .3vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding: 1.5vw;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+}
+/*btn hover stylings*/
+button:hover, .form-container .btn:hover{
+    color: #F79824;
+    background-color: black;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: silver;
+}
+/*submit btn stylings*/
+.form-container .btn{
+    background-color: white;
+    color: black;
+    border-color: black;
+    margin: 1vh;/*space between submit and close btn*/
+}
+/*close btn stylings*/
+.form-container .cancel{
+    background-color: black;
+    color: white;
+    border-color: gray;
+}
+/*close btn hover styling*/
+.form-container .cancel:hover{
+    color: white;
+    background-color: darkred;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    border-color: black;
+}
+/**media query section**/
+/*font sizes for screen sizes*/
+@media screen and(max-width:527px){
+    p{
+        font-size: 3.75vw;
+    }
+}
+@media screen and(min-width: 528px) and(max-width: 660px){
+    p{
+        font-size: 3.5vw;
+    }
+}
+@media screen and(min-width: 661px) and(max-width: 799px){
+    p{
+        font-size: 2.75vw;
+    }
+}
+@media screen and(min-width: 800px) and(max-width: 924px) {
+    p{
+        font-size: 2.5vw;
+    }
+}
+@media screen and(min-width: 925px) and(max-width: 1050px) {
+    p{
+        font-size: 2.25vw;
+    }
+}
+@media screen and(min-width: 1051px) and(max-width: 1310px) {
+    p{
+        font-size: 2vw;
+    } 
+}
+@media screen and(min-width: 1311px) and(max-width: 1535px) {
+    p{
+        font-size: 1.75vw;
+    }
+}
+@media screen and(min-width: 1536px) and(max-width: 2269px) {
+    p{
+        font-size: 1.5vw;
+    }
+}
+@media screen and(min-width: 2270px){
+    p{
+        font-size: 1.35vw;
+    }
+}
+/*navbar links for diff screen sizes*/
+/*screen<=1080px navbar links equally distributed*/
+@media screen and(max-width: 1080px){
+    .navbar a{
+        width: 20%;/*each link 1/5th of screen width*/
+        font-size: 2.5vw;
+    }
+}
+/*enlarge text for smaller screens*/
+@media screen and(max-width: 1080px){
+    .q{
+        font-size: 3.5vw;
+    }
+    .white_text{
+        font-size: 4.5vw;
+    }
+}
+/*increase column size on large screens*/
+@media screen and(min-width:1725px){
+    .column_1, .column_2{
+        height: 550px;
+    }
+}
+/*rem space above h1 elements on extra large screens*/
+@media screen and(min-width: 2000px){
+    h1{
+        margin-top: 0;
+    }    
+}
